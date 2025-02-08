@@ -17,8 +17,8 @@ input_sequence_ids = [word_to_id[word] for word in sequence]
 input_sequence_ids = tf.constant([input_sequence_ids])
 
 # Hyperparameters
-embed_dim = 4  # Embedding dimension
-num_heads = 1  # Number of attention heads
+embed_dim = 2048 # Embedding dimension
+num_heads = 1000  # Number of attention heads
 
 # Initializing embedding layer
 embedding_layer = tf.keras.layers.Embedding(vocab_size, embed_dim)
