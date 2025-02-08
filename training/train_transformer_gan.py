@@ -46,4 +46,4 @@ def train_transformer_gan(generator, discriminator, gan, x_train, epochs, batch_
 
         print(f"Epoch {epoch + 1}/{epochs}, D Loss: {avg_d_loss_real + avg_d_loss_fake}, G Loss: {avg_g_loss}")
 
-    return avg_d_loss_real, avg_d_loss_fake, avg_g_loss
+    return generator, avg_d_loss_real, avg_d_loss_fake, avg_g_loss

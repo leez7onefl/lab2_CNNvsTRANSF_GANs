@@ -6,7 +6,7 @@ def build_cnn_gan(generator, discriminator, latent_dim):
     gan_input = tf.keras.Input(shape=(latent_dim,))
     gan_output = discriminator(generator(gan_input))
     gan = tf.keras.Model(gan_input, gan_output)
-    gan.compile(optimizer=tf.keras.optimizers.Adam(0.0002), loss='binary_crossentropy')
+    gan.compile(optimizer=tf.keras.optimizers.Adam(0.0002), loss='')
     return gan
 
 def train_cnn_gan(generator, discriminator, gan, x_train, epochs, batch_size, latent_dim):
@@ -46,4 +46,4 @@ def train_cnn_gan(generator, discriminator, gan, x_train, epochs, batch_size, la
         d_loss = d_loss_real_accum / batch_count + d_loss_fake_accum / batch_count
         print(f"Epoch {epoch + 1}/{epochs}, D Loss: {d_loss}, G Loss: {g_loss_accum / batch_count}")
 
-    return d_loss_real_accum / batch_count, d_loss_fake_accum / batch_count, g_loss_accum / batch_count
+    return generator, d_loss_real_accum / batch_count, d_loss_fake_accum / batch_count, g_loss_accum / batch_count
