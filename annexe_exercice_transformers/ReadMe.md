@@ -121,3 +121,22 @@ def plot_attention(attention_weights, sequence):
 ```
 
 - **Explication**: Cette fonction génère une représentation visuelle des poids d'attention sous forme de "heatmap", illustrant l'importance accordée à chaque mot.
+---
+# Résultat
+
+Dimension de l'espace vectoriel des embeddings à 4, Nombre de têtes d'attention à 1 :
+![image](https://github.com/user-attachments/assets/1dc78914-e6b6-4580-b369-0eab1aeaa764)
+
+Dimension de l'espace vectoriel des embeddings à 16, Nombre de têtes d'attention à 1 :
+![image](https://github.com/user-attachments/assets/dff46090-0598-43ab-b84c-424dc9733661)
+
+Dimension de l'espace vectoriel des embeddings à 4, Nombre de têtes d'attention à 10 :
+![image](https://github.com/user-attachments/assets/7e2259df-9b25-41c7-b5aa-13cbcce76b12)
+
+Dimension de l'espace vectoriel des embeddings à 16, Nombre de têtes d'attention à 10 :
+![image](https://github.com/user-attachments/assets/59c4eccf-ef60-4d8c-b79f-0525a35e7a48)
+
+---
+Dimension de l'espace vectoriel des embeddings à 2048, Nombre de têtes d'attention à 1000 :
+![image](https://github.com/user-attachments/assets/c5c9f940-8aae-4d9a-819e-4449fc1d1693)
+
