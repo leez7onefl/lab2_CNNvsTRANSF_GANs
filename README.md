@@ -4,12 +4,16 @@
 
 Ce rapport détaille l'implémentation et l'évaluation de GANs basés sur des architectures CNN et Transformers, dans le cadre du cours "Generative AI for Computer Vision", niveau ING3 (Ingénieur 3).
 
+---
+
 ## Objectifs
 
 1. Implémentez un GAN basé sur CNN pour la génération d'images réalistes.
 2. Étudiez l'utilisation des architectures basées sur Transformers dans les GANs pour la modélisation générative.
 3. Comparez les performances et les résultats visuels des différentes architectures de GAN.
 4. Réfléchissez aux forces et aux défis de l'utilisation des CNN par rapport aux Transformers dans les GANs.
+
+---
 
 ## 1. GANs Basés sur CNN
 
@@ -56,6 +60,8 @@ def build_cnn_generator(latent_dim, img_shape=(28, 28, 1)):
 - **Reshape** : Ajuste la sortie de la couche dense en matrice 3D adaptée à la convolution.
 - **Conv2DTranspose** : Réalise l'échantillonnage inverse pour transformer la matrice 3D en une image.
 - **Activation tanh** : Normalise les pixels entre -1 et 1, standard pour les images générées.
+
+---
 
 ## 2. GANs Basés sur Transformers
 
@@ -120,6 +126,8 @@ def build_transformer_generator(latent_dim=100, num_heads=4, key_dim=128, emb_di
 - **Project Noise** : Étend le bruit latent à des caractéristiques significatives.
 - **MultiHeadAttention** : Favorise le mélange spatial pour synthétiser des images riches en détails.
 - **Conv2DTranspose** : Convertit l'espace de caractéristiques en images.
+
+---
 
 ## 3. Entrainement des GANs
 
@@ -200,22 +208,57 @@ def train_transformer_gan(generator, discriminator, gan, x_train, epochs, batch_
     return avg_d_loss_real, avg_d_loss_fake, avg_g_loss
 ```
 
+
 **Explication des Étapes d'Entraînement :**
 
 - La génération de bruit est utilisée pour simuler des images factices.
 - Les discriminants sont formés sur des lots d'images réelles et fausses pour minimiser les pertes.
 - L'entraînement fait varier les poids du générateur pour concevoir de meilleures fausses images capables de tromper le discriminateur.
+---
 
-## Capture d'écran des Résultats
+## 4. Capture d'écran des résultats
+
+**Résultats de l'entraînement**
 
 ![models_summaries](https://github.com/user-attachments/assets/efb44301-3759-4f90-b891-6e1c54c2d8e7)
 
+*Merci de noter qu'ici les epochs sont à multiplier par 10 - confusion dans l'affichage*
 
+![epoch0](https://github.com/user-attachments/assets/6e20b465-049a-4e1d-b91f-2dbb57e64a4f)
+
+![epoch1](https://github.com/user-attachments/assets/83ccffe1-60b7-49f2-a3d1-4d77fe5a0a4b)
+
+![epoch2](https://github.com/user-attachments/assets/d584dcdb-4b55-4253-aa07-bd1e0b38bb8e)
+
+![epoch3](https://github.com/user-attachments/assets/a3e8e47a-4d82-4ba8-8e81-5c5a9652319b)
+
+![epoch4](https://github.com/user-attachments/assets/498e3df9-b9ca-4b16-a5e1-faf7ce5a1f61)
+
+- *Apparition d'une forme convergente*
+
+![epoch5](https://github.com/user-attachments/assets/14ea11cd-aacd-4ac7-8bbc-b0b421f541d1)
+
+![epoch6](https://github.com/user-attachments/assets/971b7357-98ef-49b1-bcf3-a15f87119011)
+
+![epoch7](https://github.com/user-attachments/assets/e4c5f70a-b7f5-49d0-8688-3c8cace768ba)
+
+![epoch8](https://github.com/user-attachments/assets/ec1732df-ce64-4a26-84c9-14dcd8973053)
+
+![epoch9](https://github.com/user-attachments/assets/776e8471-34c8-4229-9390-72895e0718a3)
+
+- *Générateur et discriminateur sont assez stables --> résultats corrects*
+
+**Résultats du générateur**
+
+
+
+
+---
 ## Conclusions
 
 Les architectures CNN se sont avérées performantes pour capturer les détails locaux, tandis que les Transformers ont facilité la modélisation des relations entre les pixels à grande échelle. Les deux modèles présentent des forces et des limites distinctes dans le contexte de la génération d'images, offrant des approches complémentaires pour les tâches basées sur des données visuelles.
 
-## Informations Personnelles
+### Informations Personnelles
 
 **Léonard Gonzalez**  
 Étudiant en ING3 Big Data & Machine Learning  
