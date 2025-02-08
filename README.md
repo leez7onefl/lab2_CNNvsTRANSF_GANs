@@ -208,7 +208,8 @@ def train_transformer_gan(generator, discriminator, gan, x_train, epochs, batch_
 
 ## Capture d'écran des Résultats
 
-*Cette section contiendra les captures des résultats générés.*
+![models_summaries](https://github.com/user-attachments/assets/efb44301-3759-4f90-b891-6e1c54c2d8e7)
+
 
 ## Conclusions
 
