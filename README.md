@@ -250,8 +250,13 @@ def train_transformer_gan(generator, discriminator, gan, x_train, epochs, batch_
 
 **Résultats du générateur**
 
+![image](https://github.com/user-attachments/assets/43f1eccd-97b6-4926-908d-80151bb4973d)
 
+*Les résultats démontrent un problème*
 
+*update1:modifications sur le codes faîtes, le problème ne vien pas des hyperparamètres*
+
+*update2:Le problème ne vient pas des données ou de la façon dont elles sontu tilisées*
 
 ---
 ## Conclusions
