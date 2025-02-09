@@ -2,11 +2,11 @@ import tensorflow as tf
 import numpy as np
 
 def build_cnn_gan(generator, discriminator, latent_dim):
-    discriminator.trainable = False
+    discriminator.trainable = True
     gan_input = tf.keras.Input(shape=(latent_dim,))
     gan_output = discriminator(generator(gan_input))
     gan = tf.keras.Model(gan_input, gan_output)
-    gan.compile(optimizer=tf.keras.optimizers.Adam(0.0002), loss='')
+    gan.compile(optimizer=tf.keras.optimizers.Adam(0.0002), loss='binary_crossentropy')
     return gan
 
 def train_cnn_gan(generator, discriminator, gan, x_train, epochs, batch_size, latent_dim):

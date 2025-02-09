@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 
 def build_transformer_gan(generator, discriminator, latent_dim):
-    discriminator.trainable = False
+    discriminator.trainable = True
     gan_input = tf.keras.Input(shape=(latent_dim,))
     gan_output = discriminator(generator(gan_input))
     gan = tf.keras.Model(gan_input, gan_output)
