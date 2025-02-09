@@ -261,7 +261,9 @@ def train_transformer_gan(generator, discriminator, gan, x_train, epochs, batch_
 ---
 ## Conclusions
 
-Les architectures CNN se sont avérées performantes pour capturer les détails locaux, tandis que les Transformers ont facilité la modélisation des relations entre les pixels à grande échelle. Les deux modèles présentent des forces et des limites distinctes dans le contexte de la génération d'images, offrant des approches complémentaires pour les tâches basées sur des données visuelles.
+
+Les deux architectures semblent démontrer une évolution normale de leurs Loss Function. Cependant, lors des tentatives de générations, les résultats se montrent décevant. L'échec de la génération remet en question la pertinence des graphiques de loss. On notera cependant qu'après de nombreuses modifications, les images générées par le CNN-GAN ont évoluées, démontrant un changement. Les images produites par le TRANSFORMER-GAN elles sont restées les mêmes. 
+
 
 ### Informations Personnelles
 
